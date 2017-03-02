@@ -6,17 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fraction_Calculator/Fraction.m"
-            timestampString = "478014428.375953"
+            filePath = "Fraction_Calculator/ViewController.m"
+            timestampString = "510065467.534153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "3"
-            endingLineNumber = "3"
-            landmarkName = "@implementation Fraction"
-            landmarkType = "3">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-clickEqual"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

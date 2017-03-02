@@ -20,39 +20,35 @@
     BOOL            firstOperand, isNumerator;
     Calculator      *myCalculator;
     NSMutableString  *displayString;
-
 }
 
 @synthesize display;
 
 - (void)viewDidLoad {
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view, typically from a nib.
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
     firstOperand = YES;
     isNumerator = YES;
     displayString = [NSMutableString stringWithCapacity: 40];
     myCalculator = [[Calculator alloc] init];
-    
+    currentNumber = 0;
 }
 
--(void) processDigit:(int)digit
+- (void)processDigit:(int)digit
 {
     currentNumber = currentNumber * 10 + digit;
     
-    [displayString appendString:
-     [NSString stringWithFormat: @"%i", digit]];
+    [displayString appendString:[NSString stringWithFormat: @"%i", digit]];
     display.text = displayString;
 }
 
--(IBAction) clickDigit:(UIButton *)sender
+- (IBAction)clickDigit:(UIButton *)sender
 {
     int digit = sender.tag;
-    
-    [self processDigit: digit];
-    
+    [self processDigit:digit];
 }
 
--(void) processOp: (char) theOp
+- (void)processOp:(char)theOp
 {
     NSString *opStr;
     
@@ -81,7 +77,7 @@
     display.text = displayString;
 }
 
--(void) storeFracPart
+- (void)storeFracPart
 {
     if (firstOperand) {
         if (isNumerator) {
@@ -91,11 +87,14 @@
         else
             myCalculator.operand1.denominator = currentNumber;
     }
-    else if (isNumerator) {
-        myCalculator.operand2.numerator = currentNumber;
-        myCalculator.operand2.denominator = 1;
+    else {
+        if (isNumerator) {
+            myCalculator.operand2.numerator = currentNumber;
+            myCalculator.operand2.denominator = 1;
+        }
+        else
+            myCalculator.operand2.denominator = currentNumber;
     }
-    
     currentNumber = 0;
     
 }
@@ -137,7 +136,7 @@
         [self storeFracPart];
         [myCalculator performOperation: op];
          
-        [displayString appendString: @"="];
+        [displayString appendString: @" = "];
         [displayString appendString: [myCalculator.accumulator convertToString]];
         display.text = displayString;
         

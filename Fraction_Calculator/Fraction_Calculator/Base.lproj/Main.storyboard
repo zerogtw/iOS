@@ -40,7 +40,6 @@
                                 </state>
                                 <connections>
                                     <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VJm-3l-GZ2"/>
-                                    <action selector="clickPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRR-x8-gxC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bu0-B5-fAr">
@@ -76,7 +75,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yb8-jz-zWc"/>
                                     <action selector="clickPlus" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oJ-YM-1sJ"/>
                                 </connections>
                             </button>
@@ -89,7 +87,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="may-Ee-hdS"/>
                                     <action selector="clickMultiply" destination="BYZ-38-t0r" eventType="touchUpInside" id="zZo-BK-ZJg"/>
                                 </connections>
                             </button>
@@ -102,7 +99,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NEb-E7-Owz"/>
                                     <action selector="clickMinus" destination="BYZ-38-t0r" eventType="touchUpInside" id="laW-Zk-olh"/>
                                 </connections>
                             </button>
@@ -115,7 +111,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDx-Da-qez"/>
                                     <action selector="clickDivide" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1W-oX-n2g"/>
                                 </connections>
                             </button>

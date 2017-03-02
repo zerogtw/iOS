@@ -4,109 +4,113 @@
 
 @synthesize numerator, denominator;
 
--(void) setTo: (int) n over: (int) d
+- (void)setTo:(int)n over:(int)d
 {
     numerator = n;
     denominator = d;
 }
 
--(void) print
+- (void)print
 {
-    NSLog (@"%i/%i", numerator, denominator);
+    NSLog(@"%i/%i", numerator, denominator);
 }
 
--(double) convertToNum
+- (double)convertToNum
 {
-    if (denominator != 0)
-      return (double) numerator / denominator;
+    if(denominator != 0)
+        return (double)numerator / denominator;
     else
-	  return NAN;
+        return NAN;
 }
 
--(NSString *) convertToString
+- (NSString *)convertToString
 {
     if (numerator == denominator)
-      if (numerator == 0)
-        return @"0";
-      else
-        return @"1";
-    else if (denominator == 1)
-      return [NSString stringWithFormat: @"%i", numerator];
-    else
-      return [NSString stringWithFormat: @"%i/%i",
-              numerator, denominator];
+        if (numerator == 0)
+            return @"0";
+        else
+            return @"1";
+        else if (denominator == 1)
+            return [NSString stringWithFormat: @"%i", numerator];
+        else
+            return [NSString stringWithFormat: @"%i/%i",numerator, denominator];
 }
 
 //添加一个分数到消息的接收器
-
--(Fraction *) add: (Fraction *) f
+- (Fraction *)add:(Fraction *)f
 {
-  //将两个分数相加:
-  //a/b + c/d = ((a * d) + (c * b)) / (b * d)
+    //将两个分数相加:
+    //a/b + c/d = ((a * d) + (c * b)) / (b * d)
 
-  //存储相加后的结果
-  Fraction *result = [[Fraction alloc] init];
+    //存储相加后的结果
+    Fraction *result = [[Fraction alloc] init];
 
-  result.numerator = numerator * f.denominator + denominator * f.numerator;
-  result.denominator = denominator * f.denominator;
+    result.numerator = numerator * f.denominator + denominator * f.numerator;
+    result.denominator = denominator * f.denominator;
 
-  [result reduce];
-  return result;
+    [result reduce];
+    return result;
 }
 
--(Fraction *) substract: (Fraction *) f
+- (Fraction *)substract:(Fraction *)f
 {
-  Fraction *result = [[Fraction alloc] init];
+    Fraction *result = [[Fraction alloc] init];
 
-  result.numerator = numerator * f.denominator + denominator * f.numerator;
-  result.denominator = denominator * f.denominator;
+    result.numerator = numerator * f.denominator - denominator * f.numerator;
+    result.denominator = denominator * f.denominator;
 
-  [result reduce];
-  return result;
+    [result reduce];
+    return result;
 }
 
--(Fraction *) multiply: (Fraction *) f
+- (Fraction *)multiply:(Fraction *)f
 {
-  Fraction *result = [[Fraction alloc] init];
+    Fraction *result = [[Fraction alloc] init];
 
-  result.numerator = numerator * f.numerator;
-  result.denominator = denominator * f.denominator;
+    result.numerator = numerator * f.numerator;
+    result.denominator = denominator * f.denominator;
 
-  [result reduce];
-  return result;
+    [result reduce];
+    return result;
 
 }
 
--(Fraction *) divide: (Fraction *) f
+- (Fraction *)divide:(Fraction *)f
 {
-  Fraction *result = [[Fraction alloc] init];
+    Fraction *result = [[Fraction alloc] init];
 
-  result.numerator = numerator * f.numerator;
-  result.denominator = denominator * f.denominator;
+    result.numerator = numerator * f.denominator;
+    result.denominator = denominator * f.numerator;
 
-  [result reduce];
-  return result;
+    [result reduce];
+    return result;
 }
 
--(void) reduce
+-  (void)reduce
 {
-  int u = numerator;
-  int v = denominator;
-  int temp;
+    int u = numerator;
+    int v = denominator;
+    int temp;
+    int i;
+    
+    i = 1;
 
-  if (u == 0)
-    return;
-  else if (u < 0)
-    u = -u;
-
-  while (v != 0) {
-    temp = u % v;
-    u = v;
-    v = temp;
-  }
+    if(u == 0)
+        return;
+    else if(u < 0) {
+        u = -u;
+        i = -1;
+    }
+    
+    while(v != 0) {
+        temp = u % v;
+        u = v;
+        v = temp;
+    }
   
-  numerator /= u;
-  denominator /= u;
+    numerator /= u;
+    numerator *= i;
+    denominator /= u;
 }
 @end
 

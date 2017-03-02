@@ -10,28 +10,28 @@
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *display;
+@property(strong, nonatomic) IBOutlet UILabel *display;
 
--(void) processDigit: (int) digit;
--(void) processOp: (char) theOp;
--(void) storeFracPart;
+-(void)processDigit:(int)digit;
+-(void)processOp:(char)theOp;
+-(void)storeFracPart;
 
 //数字键
 
--(IBAction) clickDigit: (UIButton*) sender;
+- (IBAction)clickDigit: (UIButton*) sender;
 
 //算数操作符
 
--(IBAction) clickPlus;
--(IBAction) clickMinus;
--(IBAction) clickMultiply;
--(IBAction) clickDivide;
+- (IBAction)clickPlus;
+- (IBAction)clickMinus;
+- (IBAction)clickMultiply;
+- (IBAction)clickDivide;
 
 //Misc键
 
--(IBAction) clickOver;
--(IBAction) clickEqual;
--(IBAction) clickClear;
+- (IBAction)clickOver;
+- (IBAction)clickEqual;
+- (IBAction)clickClear;
 
 @end
 
