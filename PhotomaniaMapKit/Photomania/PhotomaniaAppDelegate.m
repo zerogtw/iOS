@@ -162,7 +162,7 @@
             NSURLSessionDownloadTask *task = [self.flickrDownloadSession downloadTaskWithURL:[FlickrFetcher URLforRecentGeoreferencedPhotos]];
             task.taskDescription = FLICKR_FETCH;
             [task resume];
-//            NSLog(@"start download!");
+//            NSLog(@"start initial download!");
         } else {
             // ... we are working on a fetch (let's make sure it (they) is (are) running while we're here)
             for (NSURLSessionDownloadTask *task in downloadTasks) [task resume];

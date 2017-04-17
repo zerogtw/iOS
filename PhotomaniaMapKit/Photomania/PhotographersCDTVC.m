@@ -76,7 +76,7 @@
     [self prepareViewController:segue.destinationViewController
                        forSegue:segue.identifier
                   fromIndexPath:indexPath];
-    NSLog(@"1");
+//   NSLog(@"Photographer prepareForSegue");
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -88,7 +88,7 @@
                            forSegue:nil
                       fromIndexPath:indexPath];
     }
-    NSLog(@"2");
+//    NSLog(@"Photographer tableView:didSelectRowAtIndexPath:");
 }
 
 @end
